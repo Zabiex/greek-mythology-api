@@ -20,7 +20,7 @@ def figures():
 
 @app.route('/figures/<name>',methods=["GET"])
 def figure(name):
-    cursor = db.figures.find({"name":name})
+    cursor = db.figures.find({"name":{"$in":[name]}})
     listFig = list(cursor)
     allFigures = dumps(listFig)
     return Response(allFigures,mimetype="application/json")
