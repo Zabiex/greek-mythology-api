@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import *
 from flask import jsonify
 from flask import Response
 from pymongo import MongoClient
@@ -15,21 +15,20 @@ app = Flask(__name__)
 def figures():
     cursor = db.figures.find()
     listFig = list(cursor)
-    allFigures = dumps(listFig)
+    return render_template("gods.html",allFigures=listFig)
     return Response(allFigures,mimetype="application/json")
 
 @app.route('/figures/<name>',methods=["GET"])
 def figure(name):
     cursor = db.figures.find({"name":{"$in":[name]}})
     listFig = list(cursor)
-    allFigures = dumps(listFig)
-    return Response(allFigures,mimetype="application/json")
+    return render_template("figure.html",figure=listFig[0])
 
 @app.route('/gods',methods=["GET"])
 def gods():
-    cursor = db.figures.find({"category":"major olympians"},{"name":1, "_id":0})
+    cursor = db.figures.find({"category":"major olympians"})
     listFig = list(cursor)
-    allFigures = dumps(listFig)
+    return render_template("gods.html",allFigures=listFig)
     return Response(allFigures,mimetype="application/json")
 
 @app.route('/titans',methods=["GET"])
