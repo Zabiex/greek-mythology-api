@@ -10,25 +10,26 @@ img {
     background-color: white;
 }
 .figure-card{
-    margin:1rem;
+    margin:1em;
     border-radius: 25px;
-    border:1px solid;
-    background-color: brown;
+    border:1px solid #3C1642;
+    background-color: var(--dark-blue);
 }
 .figure-name{
     text-align: center;
     border-bottom:1px solid;
-    background-color: rgb(138, 65, 138);
+    background-color: var(--palid-green);
     border-radius:25px 25px 0px 0px ;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding:1em;
 }
 .figure-description{
     text-align: center;
     border-top: 1px solid;
-    padding: 1rem;
-    background-color: brown;
+    padding: 1em;
+    background-color: var(--dark-blue);
     border-radius: 0px 0px 25px 25px;
     display: flex;
     justify-content: center;
@@ -42,6 +43,8 @@ img {
 .basic-info{
     text-align: center;
     border-top: 1px solid;
+    background-color: var(--cyan);
+    padding: 0.5em;
 }
 .figure-info{
     display: grid;
@@ -67,3 +70,11 @@ img {
       grid-template-columns: repeat(4, 1fr);
     }
 }
+
+:root {
+    --dark-purple: #3C1642;
+    --dark-blue: #086375;
+    --cyan: #1DD3B0;
+    --green: #AFFC41;
+    --palid-green: #B2FF9E;
+  }

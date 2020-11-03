@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/figure-cards.css')  }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation.css')  }}">
+    <script src="{{ url_for('static', filename='js/navigation.js')  }}"></script>
+
+    {% from "macros.html" import nav_link with context %}.
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Mythology</title>
+</head>
+
+<header>
+    <div class="nav-menu">
+        {{ nav_link('gods', 'Gods') }}
+        {{ nav_link('figures', 'All Figures') }}
+        <div>
+            <input type="text" name="" id="searchInput">
+            <button id="search-nav-button" type="submit" onclick="redirectFigure()">Search</button>
+        </div>
+        
+    </div>
+</header>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

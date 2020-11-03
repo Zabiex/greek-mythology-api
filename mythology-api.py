@@ -6,7 +6,6 @@ from bson.json_util import dumps
 
 mongoClient = MongoClient('mongodb+srv://zabi:zabi@cluster0.yvpfb.mongodb.net/greek-mythology?retryWrites=true&w=majority')
 db = mongoClient['greek-mythology']
-print(db.figures)
 
 app = Flask(__name__)
 
@@ -16,10 +15,11 @@ def figures():
     cursor = db.figures.find()
     listFig = list(cursor)
     return render_template("gods.html",allFigures=listFig)
-    return Response(allFigures,mimetype="application/json")
 
 @app.route('/figures/<name>',methods=["GET"])
 def figure(name):
+    name = name.lower()
+    name = name.capitalize()
     cursor = db.figures.find({"name":{"$in":[name]}})
     listFig = list(cursor)
     return render_template("figure.html",figure=listFig[0])
@@ -29,7 +29,6 @@ def gods():
     cursor = db.figures.find({"category":"major olympians"})
     listFig = list(cursor)
     return render_template("gods.html",allFigures=listFig)
-    return Response(allFigures,mimetype="application/json")
 
 @app.route('/titans',methods=["GET"])
 def titans():

@@ -3,7 +3,13 @@
 
 <div class="figure-card">
     <div class="figure-name">
-        <h2>{{figure.name}}</h2>
+        <h2>
+            {% if figure.name is string %}
+                {{figure.name}}
+            {% else %}
+                {{figure.name[0]}}
+            {% endif %}
+        </h2>
     </div>
     <div class="figure-image">
         <img src="{{figure.images.regular}}" alt="{{figure.name}}">

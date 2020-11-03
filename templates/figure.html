@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/figure-cards.css')  }}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{figure.name}}</title>
-</head>
-<body>
-
-    <div class="figure-card">
-        <div class="figure-name">
-            <h2>{{figure.name}}</h2>
-        </div>
-        <div>
-            <img src="{{figure.images.regular}}" alt="{{figure.name}}">
-        </div>
-        <div class="figure-description">
-            <p>{{figure.description}}</p>
-        </div>
-    </div>
-    
-    
-</body>
-</html>
+{% extends "header.html" %}
+{% block content %}
+    {% include "figure-card.html"%}
+{% endblock %}
