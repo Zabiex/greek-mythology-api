@@ -39,26 +39,25 @@ img {
 
 
 .basic-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     text-align: center;
     border-top: 1px solid;
     background-color: var(--cyan);
 }
-.basic-info * {
-    display: inline-block;
-}
-.basic-info .basic-info-item{
-    width:49%;
+.basic-info *{
     margin:auto;
     margin-top:0.5em;
     margin-bottom: 0.5em;
     text-decoration: none;
     align-items: center;
 }
-.info-label{
-    border-right: 1px solid black;
-    margin:0;
-}
-
+.vertical-line {
+    width: 1px;
+    background-color: black;
+    margin: 0 auto;
+ }
 .figure-info{
     display: flex;
     flex-direction: column;

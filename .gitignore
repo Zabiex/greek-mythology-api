@@ -3,3 +3,4 @@ virtualenv/
 .vscode/
 scrapper-parents.py
 *.json
+import.py

@@ -16,10 +16,20 @@
     </div>
     <div class="figure-info">
         <div class="figure-gender basic-info">
-            <p>{{figure.gender}}</p>
+            <p class="info-label  basic-info-item">Gender</p>
+            <p class="basic-info-item">{{figure.gender}}</p>
         </div>
         <div class="figure-category basic-info">
-            <p>{{figure.category}}</p>
+            <p class="info-label  basic-info-item">Category</p>
+            <p class="basic-info-item">{{figure.category}}</p>
+        </div>
+        <div class="figure-father basic-info">
+            <p class="info-label basic-info-item">Father</p>
+            <a class="basic-info-item" href="/figures/{{figure.father}}">{{figure.father}}</a>
+        </div>
+        <div class="figure-mother basic-info">
+            <p class="info-label  basic-info-item">Mother</p>
+            <a class="basic-info-item" href="/figures/{{figure.mother}}">{{figure.mother}}</a>
         </div>
     </div>
     <div class="figure-description">
