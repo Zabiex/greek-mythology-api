@@ -13,7 +13,7 @@ body{
 }
 .toggle a i{
     font-size: 2em;
-    color: var(--green);
+    color: white;
 }
 .nav-menu{
     display: flex;
@@ -21,7 +21,7 @@ body{
     flex-wrap: wrap;
     gap: 1em;
     justify-content: start;
-    background-color: var(--dark-purple);
+    background-color: grey;
     margin:0px;
     position: fixed;
     top: 0;
@@ -41,10 +41,10 @@ body{
 }
 
 .nav-menu .selectable-nav-item:hover{
-    background-color: var(--light-purple);
+    background-color: var(--hover-color);
 }
 .nav-menu .nav-item.selected{
-    background-color: var(--dark-green);
+    background-color: var(--main-color);
 
 }
 
@@ -99,11 +99,8 @@ button{
 }
 
 :root {
-    --dark-purple: #3C1642;
-    --light-purple: #65256e;
-    --dark-blue: #086375;
-    --cyan: #1DD3B0;
-    --green: #AFFC41;
-    --palid-green: #B2FF9E;
-    --dark-green: #406b03;
+    --hover-color:#f59b5e;
+    --content-color: #bdbbbba1;
+    --white: white;
+    --main-color: #FF8939;
   }
