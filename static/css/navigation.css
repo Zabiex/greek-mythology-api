@@ -29,7 +29,7 @@ body{
 }
 .selectable-nav-item{
     padding: 1rem;
-    font-size: 20px;
+    font-size: 1em;
     text-decoration: none;
     color:white;
 }
@@ -58,9 +58,17 @@ body{
 
 .nav-menu input{
     margin-top:4em;
-    padding:1em;
+    padding:0.7em;
     border-radius: 15px 15px 15px 15px;
     outline:none;
+    background-image: url(images/lupa.png);
+    background-size: 1.2rem;
+    background-position-y: center;
+    background-position-x: 0.5rem;
+    background-repeat: no-repeat;
+}
+.nav-menu input:focus{
+    background-image:none;
 }
 button{
     margin-left: 1em;

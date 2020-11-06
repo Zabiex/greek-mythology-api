@@ -20,7 +20,7 @@ document.onreadystatechange = function () {
                 // Cancel the default action, if needed
                 event.preventDefault();
                 // Trigger the button element with a click
-                document.getElementById("search-nav-button").click();
+                redirectFigure()
             }
         }); 
     }
@@ -36,7 +36,7 @@ $(function() {
         } else {
             $(".nav-item").addClass("active");
             $(this).find("a").html("<i class='fas fa-times'></i>");
-            //$(this).css("margin-right","auto")
         }
     });
 });
+
