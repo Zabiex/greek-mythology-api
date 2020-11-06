@@ -5,9 +5,21 @@
 body{
     margin-top: 4em;
 }
+
+.toggle {
+    order: 1;
+    margin: 1em;
+    margin-left: auto;
+}
+.toggle a i{
+    font-size: 2em;
+    color: var(--green);
+}
 .nav-menu{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
     justify-content: start;
     background-color: var(--dark-purple);
     margin:0px;
@@ -15,30 +27,37 @@ body{
     top: 0;
     width: 100%;
 }
-.nav-item{
+.selectable-nav-item{
     padding: 1rem;
     font-size: 20px;
     text-decoration: none;
     color:white;
 }
+.nav-item{
+    display:none;
+}
+.nav-item.active{
+    display:block;
+}
 
-.nav-menu .nav-item:hover{
+.nav-menu .selectable-nav-item:hover{
     background-color: var(--light-purple);
 }
-.nav-menu .nav-item.active{
+.nav-menu .nav-item.selected{
     background-color: var(--dark-green);
 
 }
 
-.nav-menu div:last-of-type{
-    margin-left: auto;
+.nav-menu .input-div{
     margin-right: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-input{
+
+.nav-menu input{
+    margin-top:4em;
     padding:1em;
     border-radius: 15px 15px 15px 15px;
     outline:none;
@@ -48,6 +67,27 @@ button{
     padding:1em;
     border-radius: 15px 15px 15px 15px;
     outline:none;
+}
+
+@media (min-width: 1100px) {
+    .nav-menu div:last-of-type{
+        margin-left:auto;
+    }
+    .toggle{
+        display: none;
+    }
+    .nav-menu{
+        flex-direction: row;
+    }
+    .nav-item{
+        display: block;
+    }
+    .nav-menu input{
+        margin-top:0;
+    }
+    .nav-menu .input-div{
+        margin-left: auto;
+    }
 }
 
 :root {

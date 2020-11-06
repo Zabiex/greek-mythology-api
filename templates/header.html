@@ -3,9 +3,12 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/figure-cards.css')  }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation.css')  }}">
+
+    <script src="https://kit.fontawesome.com/ddd4088f84.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/navigation.js')  }}"></script>
 
-    {% from "macros.html" import nav_link with context %}.
+    {% from "macros.html" import nav_link with context %}
 
 
     <meta charset="UTF-8">
@@ -14,14 +17,15 @@
 </head>
 
 <header>
-    <div class="nav-menu">
-        {{ nav_link('gods', 'Gods') }}
-        {{ nav_link('figures', 'All Figures') }}
-        <div>
-            <input type="text" name="" id="searchInput">
-            <button id="search-nav-button" type="submit" onclick="redirectFigure()">Search</button>
-        </div>
-        
+    <div>
+        <ul class="nav-menu">
+            {{ nav_link('gods', 'Gods') }}
+            {{ nav_link('figures', 'All Figures') }}
+            <div class="nav-item input-div">
+                <input class="nav-item" type="text" name="" id="searchInput">
+            </div>
+            <div class="toggle"><a href="#"><i class="fas fa-bars"></i></a></div>
+        </ul>
     </div>
 </header>
 

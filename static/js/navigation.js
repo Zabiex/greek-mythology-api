@@ -25,3 +25,18 @@ document.onreadystatechange = function () {
         }); 
     }
 }
+
+
+$(function() {
+    $(".toggle").on("click", function() {
+        if ($(".nav-item").hasClass("active")) {
+            $(".nav-item").removeClass("active");
+            $(this).find("a").html("<i class='fas fa-bars'></i>");
+            $(this).css("margin-left","auto")
+        } else {
+            $(".nav-item").addClass("active");
+            $(this).find("a").html("<i class='fas fa-times'></i>");
+            //$(this).css("margin-right","auto")
+        }
+    });
+});
