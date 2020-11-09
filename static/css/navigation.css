@@ -5,11 +5,11 @@
 body{
     margin-top: 4em;
 }
-
 .toggle {
     order: 1;
     margin: 1em;
     margin-left: auto;
+    
 }
 .toggle a i{
     font-size: 2em;
@@ -19,7 +19,6 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 1em;
     justify-content: start;
     background-color: grey;
     margin:0px;
@@ -100,7 +99,8 @@ button{
 
 :root {
     --hover-color:#f59b5e;
-    --content-color: #bdbbbba1;
+    --content-color: #cacaca;
     --white: white;
     --main-color: #FF8939;
+    --secondary-color:#3d8a86;
   }

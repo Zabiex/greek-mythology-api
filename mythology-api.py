@@ -3,6 +3,7 @@ from flask import jsonify
 from flask import Response
 from pymongo import MongoClient
 from bson.json_util import dumps
+import os
 
 mongoClient = MongoClient('mongodb+srv://zabi:zabi@cluster0.yvpfb.mongodb.net/greek-mythology?retryWrites=true&w=majority')
 db = mongoClient['greek-mythology']
@@ -44,6 +45,21 @@ def titans12():
     listFig = list(cursor)
     allFigures = dumps(listFig)
     return Response(allFigures,mimetype="application/json")
+
+
+## Put the timestamp to the css files to override cached ones
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                 endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")

@@ -15,7 +15,16 @@ img {
 }
 .figure-card{
     border-radius: 25px;
-    box-shadow: 3px 3px 3px 3px #0c0c0c33;
+    box-shadow: 3px 3px 4px 3px #979797;
+    background-color: var(--content-color);
+    transition: 0.2s;
+}
+.figure-card:hover{
+    box-shadow: 3px 3px 4px 3px #fd7200b0;
+    -ms-transform: scale(1.02); /* IE 9 */
+    -webkit-transform: scale(1.02); /* Safari 3-8 */
+    transform: scale(1.02);
+    transition: 0.2s;
 }
 .figure-name{
     text-align: center;
@@ -34,7 +43,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -63,7 +71,9 @@ img {
     display: flex;
     flex-direction: column;
 }
-
+.basic-info a{
+    color: rgb(131, 87, 156);
+}
 
 
 .card-container{
