@@ -98,3 +98,41 @@ img {
       grid-template-columns: repeat(4, 1fr);
     }
 }
+
+
+
+
+
+
+
+
+
+
+svg {
+    font: 10px sans-serif;
+  }
+  .linage {
+    fill: none;
+    stroke: #000;
+  }
+  .marriage {
+    fill: none;
+    stroke: black;
+  }
+  .man {
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .woman {
+    background-color: pink;
+    border-style: solid;
+    border-width: 1px;
+  }
+  .emphasis{
+    font-style: italic;
+  }
+  p {
+    padding:0;
+    margin:0;
+  }

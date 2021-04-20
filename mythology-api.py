@@ -11,6 +11,12 @@ db = mongoClient['greek-mythology']
 app = Flask(__name__)
 
 
+@app.route('/',methods=["GET"])
+def root():
+    cursor = db.figures.find()
+    listFig = list(cursor)
+    return render_template("gods.html",allFigures=listFig)
+
 @app.route('/figures',methods=["GET"])
 def figures():
     cursor = db.figures.find()
@@ -33,18 +39,23 @@ def gods():
 
 @app.route('/titans',methods=["GET"])
 def titans():
-    cursor = db.figures.find({"category":"titan"},{"name":1, "_id":0})
+    cursor = db.figures.find({"category":"titan"})
     listFig = list(cursor)
-    allFigures = dumps(listFig)
-    return Response(allFigures,mimetype="application/json")
+    return render_template("gods.html",allFigures=listFig)
 
 
-@app.route('/12titans',methods=["GET"])
-def titans12():
-    cursor = db.figures.find({"category":"twelve titan"},{"name":1, "_id":0})
+@app.route('/twelveTitans',methods=["GET"])
+def twelveTitans():
+    cursor = db.figures.find({"category":"twelve titan"})
     listFig = list(cursor)
-    allFigures = dumps(listFig)
-    return Response(allFigures,mimetype="application/json")
+    return render_template("gods.html",allFigures=listFig)
+
+@app.route('/tree',methods=["GET"])
+def tree():
+    cursor = db.figures.find()
+    listFig = list(cursor)
+    return render_template("tree.html",allFigures=listFig)
+
 
 
 ## Put the timestamp to the css files to override cached ones

@@ -5,9 +5,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation.css')  }}">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 
+
     <script src="https://kit.fontawesome.com/ddd4088f84.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/navigation.js')  }}"></script>
+
+    <script src="{{ url_for('static', filename='js/libs/lodash.js')  }}"></script>
+    <script src="{{ url_for('static', filename='js/libs/d3.min.js')  }}"></script>
+    <script src="{{ url_for('static', filename='js/libs/dTree.min.js')  }}"></script>
+    
+    
 
     {% from "utils/macros.html" import nav_link with context %}
 
@@ -22,6 +29,9 @@
         <div class="nav-menu">
             {{ nav_link('gods', 'Gods') }}
             {{ nav_link('figures', 'All Figures') }}
+            {{ nav_link('titans', 'Titans') }}
+            {{ nav_link('twelveTitans', 'Twelve Titans') }}
+            {{ nav_link('tree', 'Tree') }}
             <div class="nav-item input-div">
                 <input class="nav-item" type="text" name="" id="searchInput">
             </div>
